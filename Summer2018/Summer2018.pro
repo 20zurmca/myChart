@@ -3,4 +3,5 @@ TEMPLATE = subdirs
 SUBDIRS += \
     Backend \
     Frontend \
-    Test
+    Test \
+    MedicalDataBase
