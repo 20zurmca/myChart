@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += widgets qml quick opengl sql testlib
+QT       += widgets qml quick sql testlib
 
 TARGET = tst_testtest
 CONFIG   += console
