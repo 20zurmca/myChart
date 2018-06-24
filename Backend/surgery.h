@@ -6,7 +6,7 @@ class Surgery : public HealthEvent
 {
     Q_OBJECT
 public:
-    explicit Surgery(QObject *parent = nullptr);
+    using HealthEvent::HealthEvent;
     virtual ~Surgery();
 signals:
 

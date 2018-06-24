@@ -6,7 +6,7 @@ class Vaccine : public HealthEvent
 {
     Q_OBJECT
 public:
-    explicit Vaccine(QObject *parent = nullptr);
+    using HealthEvent::HealthEvent;
     virtual ~Vaccine();
 signals:
 

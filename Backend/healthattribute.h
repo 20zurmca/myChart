@@ -2,7 +2,8 @@
 #define HEALTHATTRIBUTE_H
 #include <QObject>
 #include <QVector>
-#include "observation.h"
+#include <QString>
+#include "healthobservation.h"
 
 template <class T>
 class HealthAttribute
@@ -10,6 +11,10 @@ class HealthAttribute
 public:
     HealthAttribute();
     virtual ~HealthAttribute();
+
+private:
+    QString name;
+    QVector<HealthObservation<T>> observations;
 
 };
 

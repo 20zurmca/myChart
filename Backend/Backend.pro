@@ -21,7 +21,6 @@ SOURCES += \
 
 HEADERS += \
     patient.h \
-    observation.h \
     healthattribute.h \
     healthevent.h \
     allergy.h \
@@ -34,4 +33,5 @@ HEADERS += \
     emergencycontact.h \
     diagnosis.h \
     insurance.h \
-    appointment.h
+    appointment.h \
+    healthobservation.h
