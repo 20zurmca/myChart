@@ -1,6 +1,6 @@
 #include "allergy.h"
 
-Allergy::Allergy()
+Allergy::Allergy(QObject *parent) : QObject(parent)
 {
 
 }
