@@ -15,7 +15,8 @@ class Allergy : public QObject
 
 public:
    explicit Allergy(QObject *parent = nullptr);
-    virtual ~Allergy();
+   virtual ~Allergy();
+
 signals:
 
 public slots:

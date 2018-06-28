@@ -21,12 +21,31 @@ class Insurance : public QObject
     Q_PROPERTY(QString sponser READ getSponser WRITE setSponser NOTIFY sponserChanged)
 public:
     explicit Insurance(QObject *parent = nullptr);
-
     virtual ~Insurance();
 
+    QString getMemberId() const;
+    QString getType() const;
+    QString getCarrier() const;
+    QString getEmployer() const;
+    QString getGroupNumber() const;
+    QString getSponser() const;
+
 signals:
+    void memberIdChanged();
+    void typeChanged();
+    void carrierChanged();
+    void employerChanged();
+    void groupNumberChanged();
+    void sponserChanged();
 
 public slots:
+    void setMemberId(QString memberId);
+    void setType(QString type);
+    void setCarrier(QString carrier);
+    void setEmployer(QString employer);
+    void setGroupNumber(QString groupNumber);
+    void setSponser(QString sponser);
+
 
 private:
     QString m_memberId;

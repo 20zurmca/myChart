@@ -46,30 +46,55 @@ public slots:
 
 private:
     QVector<Allergy> m_allergies;
+
     QVector<Appointment> m_appointments;
+
     QVector<Medication> m_medications;
+
     QVector<Vaccine> m_vaccines;
+
     QString m_bloodType;
+
     QVector<Insurance> m_insurances;
+
     QVector<Surgery> m_surgeries;
+
     QString m_vision;
+
     QVector<EmergencyContact> m_emergencyContacts;
+
     HealthAttribute<QString> m_heights;
+
     HealthAttribute<float> m_weights;
+
     HealthAttribute<float> m_bmis;
+
     QDateTime m_BirthDate;
+
     int m_age;
+
     int m_id;
-    QString m_currentREsidence;
+
+    QString m_currentResidence;
+
     QString m_homePhone;
+
     QString m_workPhone;
+
     QString m_cellPhone;
+
     QVector<HealthCareProvider> m_healthCareProviders;
+
     QVector<Symptom> m_symptoms;
+
     QVector<Diagnosis> m_diagnosis;
+
     QVector<Patient*> m_patientAccounts;
+
     Patient* m_relatedPatient;
+
     bool hasSameInsuranceAsRelatedPatient;
+
     HealthAttribute<QString> m_bloodPressures;
 
 

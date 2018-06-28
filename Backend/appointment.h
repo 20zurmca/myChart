@@ -23,9 +23,27 @@ public:
     explicit Appointment(QObject *parent = nullptr);
     virtual ~Appointment();
 
+    int getId() const;
+    QDateTime getDate() const;
+    QDateTime getTime() const;
+    QString getLocation() const;
+    QString getReason() const;
+
+
 signals:
+    void idChanged();
+    void dateChanged();
+    void timeChanged();
+    void locationChanged();
+    void reasonChanged();
 
 public slots:
+    void setId(int id);
+    void setDate(QDateTime date);
+    void setTime(QDateTime time);
+    void setLocation(QString location);
+    void setReason(QString reason);
+
 
 private:
     int m_id;
