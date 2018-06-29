@@ -1,9 +1,6 @@
 #ifndef MEDICATION_H
 #define MEDICATION_H
 
-#include <QObject>
-#include <QDateTime>
-#include <QString>
 #include "sideeffect.h"
 
 class Medication : public QObject
@@ -18,9 +15,9 @@ class Medication : public QObject
 
     Q_PROPERTY(QString dosage READ getDosage WRITE setDosage NOTIFY dosageChanged)
 
-    Q_PROPERTY(QDate dateStarted READ getDateStarted WRITE setDateStarted NOTIFY dateStartedChanged)
+    Q_PROPERTY(QString dateStarted READ getDateStarted WRITE setDateStarted NOTIFY dateStartedChanged)
 
-    Q_PROPERTY(QDate dateEnded READ getDateEnded WRITE setDateEnded NOTIFY dateEndedChanged)
+    Q_PROPERTY(QString dateEnded READ getDateEnded WRITE setDateEnded NOTIFY dateEndedChanged)
 
     Q_PROPERTY(SideEffect sideEffect READ getSideEffect WRITE setSideEffect NOTIFY sideEffectChanged)
 
@@ -63,8 +60,8 @@ private:
     QString m_frequencyToRemind;
     bool m_isPrescription;
     QString m_dosage;
-    QDateTime m_dateStarted;
-    QDateTime m_dateEnded;
+    QString m_dateStarted;
+    QString m_dateEnded;
     SideEffect m_sideEffect;
 
 };

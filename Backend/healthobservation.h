@@ -1,7 +1,8 @@
 #ifndef HEALTHOBSERVATION_H
 #define HEALTHOBSERVATION_H
 #include <QObject>
-#include <QDateTime>
+#include <QString>
+#include <QDate>
 
 template <typename T>
 class HealthObservation
@@ -13,7 +14,7 @@ public:
     }
     virtual ~HealthObservation();
 
-    Q_INVOKABLE QDate getDateObserved() const
+    Q_INVOKABLE QString getDateObserved() const
     {
         return dateObserved.currentDate().toString("M/dd/yyyy");
     }

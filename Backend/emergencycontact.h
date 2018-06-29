@@ -22,10 +22,30 @@ class EmergencyContact : public QObject
 public:
     explicit EmergencyContact(QObject *parent = nullptr);
     virtual ~EmergencyContact();
+    
+    QString getName() const;
+    QString getHomePhone() const;
+    QString getWorkPhone() const;
+    QString getCellPhone() const;
+    QString getRelationshipToPatient() const;
+    int getId() const;
+    
 
 signals:
+    void nameChanged();
+    void homePhoneChanged();
+    void workPhoneChanged();
+    void cellPhoneChanged();
+    void relationshipToPatientChanged();
+    void idChanged();
 
 public slots:
+    void setName(QString name);
+    void setHomePhone(QString homePhone);
+    void setWorkPhone(QString workPhone);
+    void setCellPhone(QString cellPhone);
+    void setRelationshipToPatient(QString relationshipToPatient);
+    void setId(int id);
 
 private:
     QString m_name;

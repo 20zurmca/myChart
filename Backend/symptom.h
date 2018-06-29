@@ -2,7 +2,6 @@
 #define SYMPTOM_H
 #include <QObject>
 #include <QString>
-#include <QDateTime>
 
 class Symptom : public QObject
 {
@@ -10,7 +9,7 @@ class Symptom : public QObject
 
     Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged)
 
-    Q_PROPERTY(QDateTime dateRecorded READ getDateRecorded)
+    Q_PROPERTY(QString dateRecorded READ getDateRecorded)
 
 public:
     explicit Symptom(QObject *parent = nullptr);
@@ -27,7 +26,7 @@ public slots:
 
 private:
     QString m_name;
-    QDateTime m_dateRecorded;
+    QString m_dateRecorded;
 };
 
 #endif // SYMPTOM_H

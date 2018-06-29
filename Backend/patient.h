@@ -20,9 +20,7 @@ class Patient : public QObject
 
     Q_PROPERTY(QString lastName READ getLastName WRITE setLastName NOTIFY lastNameChanged)
 
-    Q_PROPERTY(QString vision READ getVision WRITE setVision NOTIFY visionChanged)
-
-    Q_PROPERTY(QDate birthDate READ getBirthDate WRITE setBirthDate NOTIFY birthDateChanged)
+    Q_PROPERTY(QString birthDate READ getBirthDate WRITE setBirthDate NOTIFY birthDateChanged)
 
     Q_PROPERTY(int age READ getAge WRITE setAge)
 
@@ -38,9 +36,18 @@ class Patient : public QObject
 
 public:
     explicit Patient(QObject *parent = nullptr);
+
     virtual ~Patient();
 
     HealthAttribute<QString> m_bloodPressures;
+
+    HealthAttribute<QString> m_heights;
+
+    HealthAttribute<float> m_weights;
+
+    HealthAttribute<float> m_bmis;
+
+    HealthAttribute<QString> m_visions;
 
     QVector<HealthCareProvider> m_healthCareProviders;
 
@@ -111,15 +118,7 @@ public slots:
 private:
     QString m_bloodType;
 
-    QString m_vision;
-
-    HealthAttribute<QString> m_heights;
-
-    HealthAttribute<float> m_weights;
-
-    HealthAttribute<float> m_bmis;
-
-    QDate m_BirthDate;
+    QString m_BirthDate;
 
     int m_age;
 
