@@ -3,7 +3,8 @@
 
 #include <QObject>
 #include <QString>
-#include <QDateTime>
+#include <QDate>
+#include <QTime>
 
 class Appointment : public QObject
 {
@@ -11,9 +12,9 @@ class Appointment : public QObject
 
     Q_PROPERTY(int id READ getId WRITE setId NOTIFY idChanged)
 
-    Q_PROPERTY(QDateTime date READ getDate WRITE setDate NOTIFY dateChanged)
+    Q_PROPERTY(QDate date READ getDate WRITE setDate NOTIFY dateChanged)
 
-    Q_PROPERTY(QString time READ getTime WRITE setTime NOTIFY timeChanged)
+    Q_PROPERTY(QTime time READ getTime WRITE setTime NOTIFY timeChanged)
 
     Q_PROPERTY(QString location READ getLocation WRITE setLocation NOTIFY locationChanged)
 
@@ -24,8 +25,8 @@ public:
     virtual ~Appointment();
 
     int getId() const;
-    QDateTime getDate() const;
-    QDateTime getTime() const;
+    QString getDate() const;
+    QString getTime() const;
     QString getLocation() const;
     QString getReason() const;
 
@@ -47,8 +48,8 @@ public slots:
 
 private:
     int m_id;
-    QDateTime m_date;
-    QString m_time;
+    QDate m_date;
+    QTime m_time;
     QString m_location;
     QString m_reason;
 };

@@ -23,9 +23,32 @@ class Surgery : public HealthEvent
 public:
     using HealthEvent::HealthEvent;
     virtual ~Surgery();
+    
+    int getId() const;
+    QString getPreOpInstruction() const;
+    QString getPostOpInstruction() const;
+    QString getSurgeon() const;
+    QString getRecoveryTime() const;
+    QString getRecoveryNotes() const;
+    QString getProcedureDate() const;
+
 signals:
+    void idChanged();
+    void preOpInstructionChanged();
+    void postOpInstructionChanged();
+    void surgeonChanged();
+    void recoveryTimeChanged();
+    void recoveryNotesChanged();
+    void procedureDateChanged();
 
 public slots:
+    void setId(int id);
+    void setPreOpInstruction(QString preOpInstruction);
+    void setPostOpInstruction(QString postOpInstruction);
+    void setSurgeon(QString surgeon);
+    void setRecoveryTime(QString recoveryTime);
+    void setRecoveryNotes(QString recoveryNotes);
+    void setProcedureDate(QDate procedureDate);
 
 private:
     int m_id;

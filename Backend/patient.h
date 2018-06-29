@@ -22,9 +22,9 @@ class Patient : public QObject
 
     Q_PROPERTY(QString vision READ getVision WRITE setVision NOTIFY visionChanged)
 
-    Q_PROPERTY(QDateTime birthDate READ getBirthDate WRITE setBirthDate NOTIFY birthDateChanged)
+    Q_PROPERTY(QDate birthDate READ getBirthDate WRITE setBirthDate NOTIFY birthDateChanged)
 
-    Q_PROPERTY(int age READ getAge WRITE setAge NOTIFY ageChanged)
+    Q_PROPERTY(int age READ getAge WRITE setAge)
 
     Q_PROPERTY(QString currentAddress READ getCurrentAddress WRITE setCurrentAddress NOTIFY currentAddressChanged)
 
@@ -40,11 +40,16 @@ public:
     explicit Patient(QObject *parent = nullptr);
     virtual ~Patient();
 
-signals:
+    HealthAttribute<QString> m_bloodPressures;
 
-public slots:
+    QVector<HealthCareProvider> m_healthCareProviders;
 
-private:
+    QVector<Symptom> m_symptoms;
+
+    QVector<Diagnosis> m_diagnoses;
+
+    QVector<Patient*> m_patientAccounts;
+
     QVector<Allergy> m_allergies;
 
     QVector<Appointment> m_appointments;
@@ -53,15 +58,60 @@ private:
 
     QVector<Vaccine> m_vaccines;
 
-    QString m_bloodType;
-
     QVector<Insurance> m_insurances;
 
     QVector<Surgery> m_surgeries;
 
-    QString m_vision;
-
     QVector<EmergencyContact> m_emergencyContacts;
+    
+    QString getFirstName() const;
+
+    QString getLastName() const;
+
+    QString getVision() const;
+
+    QString getBirthDate() const;
+
+    int getAge() const;
+
+    QString getCurrentAddress() const;
+
+    QString getHomePhone() const;
+
+    QString getWorkPhone() const;
+
+    QString getCellPhone() const;
+
+    int getId() const;
+
+signals:
+    void firstNameChanged();
+    void lastNameChanged();
+    void visionChanged();
+    void birthDateChanged();
+    void currentAddressChanged();
+    void homePhoneChanged();
+    void workPhoneChanged();
+    void cellPhoneChanged();
+    void idChanged();
+
+public slots:
+    void setFirstName(QString firstName);
+    void setLastName(QString lastName);
+    void setVision(QString vision);
+    void setBirthDate(QDate birthdate);
+    void setAge(int age);
+    void setCurrentAddress(QString currentAddress);
+    void setHomePhone(QString homePhone);
+    void setWorkPhone(QString workPhone);
+    void setCellPhone(QString cellPhone);
+    void setId(int id);
+
+
+private:
+    QString m_bloodType;
+
+    QString m_vision;
 
     HealthAttribute<QString> m_heights;
 
@@ -69,7 +119,7 @@ private:
 
     HealthAttribute<float> m_bmis;
 
-    QDateTime m_BirthDate;
+    QDate m_BirthDate;
 
     int m_age;
 
@@ -83,23 +133,9 @@ private:
 
     QString m_cellPhone;
 
-    QVector<HealthCareProvider> m_healthCareProviders;
-
-    QVector<Symptom> m_symptoms;
-
-    QVector<Diagnosis> m_diagnosis;
-
-    QVector<Patient*> m_patientAccounts;
-
     Patient* m_relatedPatient;
 
     bool hasSameInsuranceAsRelatedPatient;
-
-    HealthAttribute<QString> m_bloodPressures;
-
-
-
-
 };
 
 #endif // PATIENT_H

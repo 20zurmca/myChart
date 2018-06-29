@@ -2,25 +2,31 @@
 #define HEALTHEVENT_H
 #include <QObject>
 #include <QString>
-#include <QDateTime>
+#include <QDate>
+#include <QTime>
 
 class HealthEvent : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
-    Q_PROPERTY(QDateTime dateRecorded READ getDateRecorded)
+    Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged)
+    Q_PROPERTY(QDate dateRecorded READ getDateRecorded)
 public:
     explicit HealthEvent(QObject *parent = nullptr);
     virtual ~HealthEvent();
+    
+    QString getName() const;
+    QString getDateRecorded();
 
 signals:
+    void nameChagned();
 
 public slots:
+    void setName(QString name);
 
 private:
     QString m_name;
-    QDateTime m_dateRecorded;
+    QDate m_dateRecorded;
 };
 
 #endif // HEALTHEVENT_H

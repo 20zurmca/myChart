@@ -7,19 +7,31 @@ class Allergy : public QObject
 {
     Q_OBJECT
 
-    Q_PROPERTY(QString getType READ getType WRITE setGetType NOTIFY getTypeChanged)
+    Q_PROPERTY(QString type READ getType WRITE setType NOTIFY typeChanged)
 
     Q_PROPERTY(bool isSeasonal READ getIsSeasonal WRITE setIsSeasonal NOTIFY isSeasonalChanged)
 
-    Q_PROPERTY(bool IsLifeThreatening READ IsLifeThreatening WRITE setIsLifeThreatening NOTIFY IsLifeThreateningChanged)
+    Q_PROPERTY(bool isLifeThreatening READ getIsLifeThreatening WRITE setIsLifeThreatening NOTIFY isLifeThreateningChanged)
 
 public:
    explicit Allergy(QObject *parent = nullptr);
    virtual ~Allergy();
-
+    
+   QString getType() const;
+   
+   bool getIsSeasonal() const;
+   
+   bool getIsLifeThreatening() const;
+    
 signals:
+    void typeChanged();
+    void isSeasonalChanged();
+    void isLifeThreateningChanged();
 
 public slots:
+    void setType(QString newType);
+    void setIsSeasonal(bool isSeasonal);
+    void setIsLifeThreatening(bool isLifeThreatening);
 
 private:
     QString m_type;

@@ -16,9 +16,14 @@ public:
     explicit Symptom(QObject *parent = nullptr);
     virtual ~Symptom();
 
+    QString getName() const;
+    QDate getDateRecorded() const;
+
 signals:
+    void nameChanged();
 
 public slots:
+    void setName(QString name);
 
 private:
     QString m_name;

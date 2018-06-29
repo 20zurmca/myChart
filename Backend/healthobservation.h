@@ -3,12 +3,25 @@
 #include <QObject>
 #include <QDateTime>
 
-template <class T>
+template <typename T>
 class HealthObservation
 {
 public:
-    HealthObservation();
+    HealthObservation(T value_)
+    {
+        value = value_;
+    }
     virtual ~HealthObservation();
+
+    Q_INVOKABLE QDate getDateObserved() const
+    {
+        return dateObserved.currentDate().toString("M/dd/yyyy");
+    }
+
+    Q_INVOKABLE T getValue() const
+    {
+        return value;
+    }
 
 private:
     QDate dateObserved;
