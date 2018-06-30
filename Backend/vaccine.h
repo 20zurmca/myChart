@@ -11,6 +11,7 @@ class Vaccine : public HealthEvent
 
 public:
     using HealthEvent::HealthEvent;
+
     virtual ~Vaccine();
 
     SideEffect* getSideEffect() const;

@@ -49,27 +49,27 @@ public:
 
     HealthAttribute<QString> m_visions;
 
-    QVector<HealthCareProvider> m_healthCareProviders;
+    QVector<HealthCareProvider*> m_healthCareProviders;
 
-    QVector<Symptom> m_symptoms;
+    QVector<Symptom*> m_symptoms;
 
-    QVector<Diagnosis> m_diagnoses;
+    QVector<Diagnosis*> m_diagnoses;
 
     QVector<Patient*> m_patientAccounts;
 
-    QVector<Allergy> m_allergies;
+    QVector<Allergy*> m_allergies;
 
-    QVector<Appointment> m_appointments;
+    QVector<Appointment*> m_appointments;
 
-    QVector<Medication> m_medications;
+    QVector<Medication*> m_medications;
 
-    QVector<Vaccine> m_vaccines;
+    QVector<Vaccine*> m_vaccines;
 
-    QVector<Insurance> m_insurances;
+    QVector<Insurance*> m_insurances;
 
-    QVector<Surgery> m_surgeries;
+    QVector<Surgery*> m_surgeries;
 
-    QVector<EmergencyContact> m_emergencyContacts;
+    QVector<EmergencyContact*> m_emergencyContacts;
     
     QString getFirstName() const;
 
@@ -93,27 +93,43 @@ public:
 
 signals:
     void firstNameChanged();
+
     void lastNameChanged();
+
     void visionChanged();
+
     void birthDateChanged();
+
     void currentAddressChanged();
+
     void homePhoneChanged();
+
     void workPhoneChanged();
+
     void cellPhoneChanged();
+
     void idChanged();
 
 public slots:
     void setFirstName(QString firstName);
-    void setLastName(QString lastName);
-    void setVision(QString vision);
-    void setBirthDate(QString birthdate);
-    void setAge(int age);
-    void setCurrentAddress(QString currentAddress);
-    void setHomePhone(QString homePhone);
-    void setWorkPhone(QString workPhone);
-    void setCellPhone(QString cellPhone);
-    void setId(int id);
 
+    void setLastName(QString lastName);
+
+    void setVision(QString vision);
+
+    void setBirthDate(QString birthdate);
+
+    void setAge(int age);
+
+    void setCurrentAddress(QString currentAddress);
+
+    void setHomePhone(QString homePhone);
+
+    void setWorkPhone(QString workPhone);
+
+    void setCellPhone(QString cellPhone);
+
+    void setId(int id);
 
 private:
     QString m_bloodType;

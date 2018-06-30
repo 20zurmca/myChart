@@ -22,6 +22,10 @@ public:
    bool getIsSeasonal() const;
    
    bool getIsLifeThreatening() const;
+
+   QString isSeasonalAsQstr() const;
+
+   QString isLifeThreateningAsQstr() const;
     
 signals:
     void typeChanged();
