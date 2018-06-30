@@ -8,7 +8,7 @@ class Surgery : public HealthEvent
 
     Q_PROPERTY(int id READ getId WRITE setId NOTIFY idChanged)
 
-    Q_PROPERTY(QString preOpInstructions READ getPreOpInstruction WRITE setPreOpInstruction NOTIFY preOpInstructionChanged)
+    Q_PROPERTY(QString preOpInstructions READ getPreOpInstructions WRITE setPreOpInstructions NOTIFY preOpInstructionsChanged)
 
     Q_PROPERTY(QString postOpInstructions READ getPostOpInstructions WRITE setPostOpInstructions NOTIFY postOpInstructionsChanged)
 
@@ -18,6 +18,8 @@ class Surgery : public HealthEvent
 
     Q_PROPERTY(QString recoveryNotes READ getRecoveryNotes WRITE setRecoveryNotes NOTIFY recoveryNotesChanged)
 
+    Q_PROPERTY(QString procedureDate READ getProcedureDate WRITE setProcedureDate NOTIFY procedureDateChanged)
+
 
 
 public:
@@ -25,17 +27,18 @@ public:
     virtual ~Surgery();
     
     int getId() const;
-    QString getPreOpInstruction() const;
-    QString getPostOpInstruction() const;
+    QString getPreOpInstructions() const;
+    QString getPostOpInstructions() const;
     QString getSurgeon() const;
     QString getRecoveryTime() const;
     QString getRecoveryNotes() const;
     QString getProcedureDate() const;
 
+
 signals:
     void idChanged();
-    void preOpInstructionChanged();
-    void postOpInstructionChanged();
+    void preOpInstructionsChanged();
+    void postOpInstructionsChanged();
     void surgeonChanged();
     void recoveryTimeChanged();
     void recoveryNotesChanged();
@@ -43,17 +46,18 @@ signals:
 
 public slots:
     void setId(int id);
-    void setPreOpInstruction(QString preOpInstruction);
-    void setPostOpInstruction(QString postOpInstruction);
+    void setPreOpInstructions(QString preOpInstructions);
+    void setPostOpInstructions(QString postOpInstructions);
     void setSurgeon(QString surgeon);
     void setRecoveryTime(QString recoveryTime);
     void setRecoveryNotes(QString recoveryNotes);
-    void setProcedureDate(QDate procedureDate);
+    void setProcedureDate(QString procedureDate);
 
 private:
     int m_id;
     QString m_preOpInstructions;
     QString m_postOpInstructions;
+    QString m_procedureDate;
     QString m_surgeon;
     QString m_recoveryTime;
     QString m_recoveryNotes;

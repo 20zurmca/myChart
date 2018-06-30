@@ -106,7 +106,7 @@ public slots:
     void setFirstName(QString firstName);
     void setLastName(QString lastName);
     void setVision(QString vision);
-    void setBirthDate(QDate birthdate);
+    void setBirthDate(QString birthdate);
     void setAge(int age);
     void setCurrentAddress(QString currentAddress);
     void setHomePhone(QString homePhone);

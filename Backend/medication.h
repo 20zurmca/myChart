@@ -19,7 +19,7 @@ class Medication : public QObject
 
     Q_PROPERTY(QString dateEnded READ getDateEnded WRITE setDateEnded NOTIFY dateEndedChanged)
 
-    Q_PROPERTY(SideEffect sideEffect READ getSideEffect WRITE setSideEffect NOTIFY sideEffectChanged)
+    Q_PROPERTY(SideEffect* sideEffect READ getSideEffect WRITE setSideEffect NOTIFY sideEffectChanged)
 
 public:
     explicit Medication(QObject *parent = nullptr);
@@ -32,7 +32,7 @@ public:
     QString getDosage() const;
     QString getDateStarted() const;
     QString getDateEnded() const;
-    SideEffect getSideEffect() const;
+    SideEffect* getSideEffect() const;
     
     
 
@@ -42,17 +42,17 @@ signals:
     void isPrescriptionChanged();
     void dosageChanged();
     void dateStartedChanged();
-    void dateEndedChagned();
     void sideEffectChanged();
+    void dateEndedChanged();
 
 public slots:
     void setName(QString name);
     void setFrequencyToRemind(QString frequencyToRemind);
     void setIsPrescription(bool isPrescription);
     void setDosage(QString dosage);
-    void setDateStarted(QDate dateStarted);
-    void setDateEnded(QDate dateEnded);
-    void setSideEffect(SideEffect sideEffect);
+    void setDateStarted(QString dateStarted);
+    void setDateEnded(QString dateEnded);
+    void setSideEffect(SideEffect* sideEffect);
     
 
 private:
@@ -62,7 +62,7 @@ private:
     QString m_dosage;
     QString m_dateStarted;
     QString m_dateEnded;
-    SideEffect m_sideEffect;
+    SideEffect* m_sideEffect;
 
 };
 

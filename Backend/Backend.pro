@@ -17,7 +17,8 @@ SOURCES += \
     emergencycontact.cpp \
     diagnosis.cpp \
     insurance.cpp \
-    appointment.cpp
+    appointment.cpp \
+    dategetter.cpp
 
 HEADERS += \
     patient.h \
@@ -34,4 +35,5 @@ HEADERS += \
     diagnosis.h \
     insurance.h \
     appointment.h \
-    healthobservation.h
+    healthobservation.h \
+    dategetter.h

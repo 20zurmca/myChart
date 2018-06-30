@@ -12,7 +12,10 @@ public:
     {
         value = value_;
     }
-    virtual ~HealthObservation();
+     ~HealthObservation()
+    {
+
+    }
 
     Q_INVOKABLE QString getDateObserved() const
     {

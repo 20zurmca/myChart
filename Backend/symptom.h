@@ -16,7 +16,7 @@ public:
     virtual ~Symptom();
 
     QString getName() const;
-    QDate getDateRecorded() const;
+    QString getDateRecorded() const;
 
 signals:
     void nameChanged();

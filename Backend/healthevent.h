@@ -18,7 +18,7 @@ public:
     QString getDateRecorded();
 
 signals:
-    void nameChagned();
+    void nameChanged();
 
 public slots:
     void setName(QString name);

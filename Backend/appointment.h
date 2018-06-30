@@ -38,8 +38,8 @@ signals:
 
 public slots:
     void setId(int id);
-    void setDate(QDateTime date);
-    void setTime(QDateTime time);
+    void setDate(QString date);
+    void setTime(QString time);
     void setLocation(QString location);
     void setReason(QString reason);
 

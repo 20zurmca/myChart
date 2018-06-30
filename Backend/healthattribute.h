@@ -13,7 +13,10 @@ public:
     {
         name = name_;
     }
-    virtual ~HealthAttribute();
+     ~HealthAttribute()
+    {
+
+    }
 
     Q_INVOKABLE QString getName() const;
 
@@ -29,7 +32,7 @@ public:
         observations.clear();
     }
 
-    Q_INVOKABLE void getObservation(int pos)
+    Q_INVOKABLE HealthObservation<T> getObservation(int pos)
     {
         if(pos < observations.size()) {
             return observations.at(pos);

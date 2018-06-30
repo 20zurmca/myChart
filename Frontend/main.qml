@@ -5,5 +5,5 @@ Window {
     visible: true
     width: 350
     height: 550
-    title: qsTr("Hello World")
+    title: qsTr(Date.now())
 }
