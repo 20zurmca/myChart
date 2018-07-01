@@ -41,6 +41,14 @@ public:
         }
     }
 
+    Q_INVOKABLE void removeObservation(int pos)
+    {
+        if (pos < observations.size() && pos > 0)
+        {
+            observations.remove(pos);
+        }
+    }
+
 private:
     QString name;
 
