@@ -15,6 +15,7 @@ class Allergy : public QObject
 
 public:
    explicit Allergy(QObject *parent = nullptr);
+
    virtual ~Allergy();
     
    QString getType() const;
@@ -29,17 +30,23 @@ public:
     
 signals:
     void typeChanged();
+
     void isSeasonalChanged();
+
     void isLifeThreateningChanged();
 
 public slots:
     void setType(QString newType);
+
     void setIsSeasonal(bool isSeasonal);
+
     void setIsLifeThreatening(bool isLifeThreatening);
 
 private:
     QString m_type;
+
     bool m_isSeasonal;
+
     bool m_isLifeThreatening;
 };
 

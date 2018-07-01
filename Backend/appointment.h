@@ -20,35 +20,50 @@ class Appointment : public QObject
 
 public:
     explicit Appointment(QObject *parent = nullptr);
+
     virtual ~Appointment();
 
     int getId() const;
-    QString getDate() const;
-    QString getTime() const;
-    QString getLocation() const;
-    QString getReason() const;
 
+    QString getDate() const;
+
+    QString getTime() const;
+
+    QString getLocation() const;
+
+    QString getReason() const;
 
 signals:
     void idChanged();
+
     void dateChanged();
+
     void timeChanged();
+
     void locationChanged();
+
     void reasonChanged();
 
 public slots:
     void setId(int id);
-    void setDate(QString date);
-    void setTime(QString time);
-    void setLocation(QString location);
-    void setReason(QString reason);
 
+    void setDate(QString date);
+
+    void setTime(QString time);
+
+    void setLocation(QString location);
+
+    void setReason(QString reason);
 
 private:
     int m_id;
+
     QString m_date;
+
     QString m_time;
+
     QString m_location;
+
     QString m_reason;
 };
 

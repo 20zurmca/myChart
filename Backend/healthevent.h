@@ -9,13 +9,17 @@ class HealthEvent : public QObject
     Q_OBJECT
 
     Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged)
+
     Q_PROPERTY(QString dateRecorded READ getDateRecorded)
+
 public:
     explicit HealthEvent(QObject *parent = nullptr);
+
     virtual ~HealthEvent();
     
     QString getName() const;
-    QString getDateRecorded();
+
+    QString getDateRecorded() const;
 
 signals:
     void nameChanged();
@@ -25,6 +29,7 @@ public slots:
 
 private:
     QString m_name;
+
     QString m_dateRecorded;
 };
 

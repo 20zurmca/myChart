@@ -12,6 +12,7 @@ class DateGetter : public QObject
 
 public:
     explicit DateGetter(QObject *parent = nullptr);
+
     virtual ~DateGetter();
 
     Q_INVOKABLE QString getAbbrDate() const;
@@ -26,6 +27,7 @@ public slots:
 
 private:
     QDate date;
+
     QTime time;
 };
 

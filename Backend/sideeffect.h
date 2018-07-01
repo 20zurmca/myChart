@@ -14,22 +14,26 @@ class SideEffect : public QObject
 
 public:
     explicit SideEffect(QObject *parent = nullptr);
+
     virtual ~SideEffect();
     
     int getId() const;
+
     QString getDescription() const;
 
 signals:
     void idChanged();
+
     void descriptionChanged();
    
 public slots:
     void setId(int id);
+
     void setDescription(QString description);
     
-
 private:
     int m_id;
+
     QString m_description;
 };
 

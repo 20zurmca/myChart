@@ -1,6 +1,6 @@
 #include "allergy.h"
 
-Allergy::Allergy(QObject *parent) : QObject(parent), m_type("N/A"), m_isSeasonal(false), m_isLifeThreatening(false)
+Allergy::Allergy(QObject *parent) : QObject(parent), m_type("-"), m_isSeasonal(false), m_isLifeThreatening(false)
 {
 
 }

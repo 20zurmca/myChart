@@ -29,6 +29,7 @@ public:
 
 private:
     QDate dateObserved;
+
     T value;
 
 

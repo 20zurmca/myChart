@@ -43,6 +43,7 @@ public:
 
 private:
     QString name;
+
     QVector<HealthObservation<T>> observations;
 
 };

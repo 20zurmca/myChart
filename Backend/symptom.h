@@ -13,9 +13,11 @@ class Symptom : public QObject
 
 public:
     explicit Symptom(QObject *parent = nullptr);
+
     virtual ~Symptom();
 
     QString getName() const;
+    \
     QString getDateRecorded() const;
 
 signals:
@@ -26,6 +28,7 @@ public slots:
 
 private:
     QString m_name;
+
     QString m_dateRecorded;
 };
 

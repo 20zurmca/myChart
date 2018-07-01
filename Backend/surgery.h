@@ -20,46 +20,68 @@ class Surgery : public HealthEvent
 
     Q_PROPERTY(QString procedureDate READ getProcedureDate WRITE setProcedureDate NOTIFY procedureDateChanged)
 
-
-
 public:
     using HealthEvent::HealthEvent;
+
     virtual ~Surgery();
     
     int getId() const;
-    QString getPreOpInstructions() const;
-    QString getPostOpInstructions() const;
-    QString getSurgeon() const;
-    QString getRecoveryTime() const;
-    QString getRecoveryNotes() const;
-    QString getProcedureDate() const;
 
+    QString getPreOpInstructions() const;
+
+    QString getPostOpInstructions() const;
+
+    QString getSurgeon() const;
+
+    QString getRecoveryTime() const;
+
+    QString getRecoveryNotes() const;
+
+    QString getProcedureDate() const;
 
 signals:
     void idChanged();
+
     void preOpInstructionsChanged();
+
     void postOpInstructionsChanged();
+
     void surgeonChanged();
+
     void recoveryTimeChanged();
+
     void recoveryNotesChanged();
+
     void procedureDateChanged();
 
 public slots:
     void setId(int id);
+
     void setPreOpInstructions(QString preOpInstructions);
+
     void setPostOpInstructions(QString postOpInstructions);
+
     void setSurgeon(QString surgeon);
+
     void setRecoveryTime(QString recoveryTime);
+
     void setRecoveryNotes(QString recoveryNotes);
+
     void setProcedureDate(QString procedureDate);
 
 private:
     int m_id;
+
     QString m_preOpInstructions;
+
     QString m_postOpInstructions;
+
     QString m_procedureDate;
+
     QString m_surgeon;
+
     QString m_recoveryTime;
+
     QString m_recoveryNotes;
 };
 
