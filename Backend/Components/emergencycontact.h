@@ -22,6 +22,14 @@ class EmergencyContact : public QObject
 public:
     explicit EmergencyContact(QObject *parent = nullptr);
 
+    explicit EmergencyContact(const int &id,
+                              const QString &name,
+                              const QString &homePhone,
+                              const QString &workPhone,
+                              const QString &cellPhone,
+                              const QString &relationshipToPatient,
+                              QObject *parent = nullptr);
+
     virtual ~EmergencyContact();
     
     QString getName() const;
@@ -51,19 +59,21 @@ signals:
     void idChanged();
 
 public slots:
-    void setName(QString name);
+    void setName(const QString &name);
 
-    void setHomePhone(QString homePhone);
+    void setHomePhone(const QString &homePhone);
 
-    void setWorkPhone(QString workPhone);
+    void setWorkPhone(const QString &workPhone);
 
-    void setCellPhone(QString cellPhone);
+    void setCellPhone(const QString &cellPhone);
 
-    void setRelationshipToPatient(QString relationshipToPatient);
+    void setRelationshipToPatient(const QString &relationshipToPatient);
 
-    void setId(int id);
+    void setId(const int &id);
 
 private:
+    int m_id;
+
     QString m_name;
 
     QString m_homePhone;
@@ -73,8 +83,6 @@ private:
     QString m_cellPhone;
 
     QString m_relationshipToPatient;
-
-    int m_id;
 
 };
 

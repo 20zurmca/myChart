@@ -19,6 +19,8 @@ class HealthCareProvider : public QObject
 public:
     explicit HealthCareProvider(QObject *parent = nullptr);
 
+    explicit HealthCareProvider(const QString &name, const QString &type, const QString &officeAddress, const QString &officePhone, QObject *parent = nullptr);
+
     virtual ~HealthCareProvider();
     
     QString getName() const;
@@ -39,13 +41,13 @@ signals:
     void officePhoneChanged();
 
 public slots:
-    void setName(QString name);
+    void setName(const QString &name);
 
-    void setType(QString type);
+    void setType(const QString &type);
 
-    void setOfficeAddress(QString officeAddress);
+    void setOfficeAddress(const QString &officeAddress);
 
-    void setOfficePhone(QString officePhone);
+    void setOfficePhone(const QString &officePhone);
 
 private:
     QString m_name;

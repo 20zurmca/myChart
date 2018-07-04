@@ -1,6 +1,7 @@
 #ifndef HEALTHEVENT_H
 #define HEALTHEVENT_H
 #include <QObject>
+#include "dategetter.h"
 #include <QString>
 
 
@@ -15,6 +16,8 @@ class HealthEvent : public QObject
 public:
     explicit HealthEvent(QObject *parent = nullptr);
 
+    explicit HealthEvent(const QString &name, const QString &dateRecorded, QObject *parent = nullptr);
+
     virtual ~HealthEvent();
     
     QString getName() const;
@@ -25,12 +28,14 @@ signals:
     void nameChanged();
 
 public slots:
-    void setName(QString name);
+    void setName(const QString &name);
 
 private:
     QString m_name;
 
     QString m_dateRecorded;
+
+    DateGetter* date;
 };
 
 #endif // HEALTHEVENT_H

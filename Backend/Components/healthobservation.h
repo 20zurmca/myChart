@@ -31,9 +31,6 @@ private:
     QDate dateObserved;
 
     T value;
-
-
-
 };
 
 #endif // HEALTHOBSERVATION_H

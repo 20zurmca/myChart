@@ -5,6 +5,18 @@ Appointment::Appointment(QObject *parent) : QObject(parent)
 
 }
 
+Appointment::Appointment(const int &id,
+                         const QString &date,
+                         const QString &time,
+                         const QString &location,
+                         const QString &reason,
+                         QObject *parent) : QObject(parent),
+                                            m_id(id),
+                                            m_date(date),
+                                            m_time(time),
+                                            m_location(location),
+                                            m_reason(reason) {}
+
 Appointment::~Appointment()
 {
 
@@ -35,7 +47,7 @@ QString Appointment::getTime() const
     return m_time;
 }
 
-void Appointment::setDate(QString date)
+void Appointment::setDate(const QString &date)
 {
     if(date != m_date)
     {
@@ -44,7 +56,7 @@ void Appointment::setDate(QString date)
     }
 }
 
-void Appointment::setId(int id)
+void Appointment::setId(const int &id)
 {
     if(id != m_id)
     {
@@ -53,7 +65,7 @@ void Appointment::setId(int id)
     }
 }
 
-void Appointment::setLocation(QString location)
+void Appointment::setLocation(const QString &location)
 {
     if(location != m_location)
     {
@@ -63,7 +75,7 @@ void Appointment::setLocation(QString location)
 
 }
 
-void Appointment::setReason(QString reason)
+void Appointment::setReason(const QString &reason)
 {
     if (reason != m_reason)
     {
@@ -72,7 +84,7 @@ void Appointment::setReason(QString reason)
     }
 }
 
-void Appointment::setTime(QString time)
+void Appointment::setTime(const QString &time)
 {
     if(time != m_time)
     {

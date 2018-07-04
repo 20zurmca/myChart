@@ -22,6 +22,14 @@ class Insurance : public QObject
 public:
     explicit Insurance(QObject *parent = nullptr);
 
+    explicit Insurance(const QString &memberId,
+                       const QString &type,
+                       const QString &carrier,
+                       const QString &employer,
+                       const QString &groupNumber,
+                       const QString &sponser,
+                       QObject *parent = nullptr);
+
     virtual ~Insurance();
 
     QString getMemberId() const;
@@ -50,17 +58,17 @@ signals:
     void sponserChanged();
 
 public slots:
-    void setMemberId(QString memberId);
+    void setMemberId(const QString &memberId);
 
-    void setType(QString type);
+    void setType(const QString &type);
 
-    void setCarrier(QString carrier);
+    void setCarrier(const QString &carrier);
 
-    void setEmployer(QString employer);
+    void setEmployer(const QString &employer);
 
-    void setGroupNumber(QString groupNumber);
+    void setGroupNumber(const QString &groupNumber);
 
-    void setSponser(QString sponser);
+    void setSponser(const QString &sponser);
 
 private:
     QString m_memberId;

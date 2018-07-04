@@ -44,15 +44,15 @@ class Patient : public QObject
 
     Q_PROPERTY(int id READ getId WRITE setId NOTIFY idChanged)
 
-    Q_PROPERTY(HealthAttribute<QString> bloodPressures READ getBloodPressures)
+    Q_PROPERTY(HealthAttribute<QString>* bloodPressures READ getBloodPressures)
 
-    Q_PROPERTY(HealthAttribute<float> heights READ getHeights)
+    Q_PROPERTY(HealthAttribute<float>* heights READ getHeights)
 
-    Q_PROPERTY(HealthAttribute<float> bmis READ getBmis)
+    Q_PROPERTY(HealthAttribute<float>* bmis READ getBmis)
 
-    Q_PROPERTY(HealthAttribute<float> weights READ getWeights)
+    Q_PROPERTY(HealthAttribute<float>* weights READ getWeights)
 
-    Q_PROPERTY(HealthAttribute<QString> visions READ getVisions)
+    Q_PROPERTY(HealthAttribute<QString>* visions READ getVisions)
 
     Q_PROPERTY(HealthCareProviderList* healthCareProviders READ getHealthCareProviders)
 
@@ -77,6 +77,17 @@ class Patient : public QObject
 public:
     explicit Patient(QObject *parent = nullptr);
 
+    explicit Patient(const QString &firstName,
+                     const QString &lastName,
+                     const QString birthDate,
+                     const int &age,
+                     const QString &currentAddress,
+                     const QString &homePhone,
+                     const QString &workPhone,
+                     const QString &cellPhone,
+                     const int &id,
+                     QObject *parent = nullptr);
+
     virtual ~Patient();
     
     QString getFirstName() const;
@@ -99,15 +110,53 @@ public:
 
     HealthAttribute<QString> getBloodPressures() const;
 
-    void addBloodPressureObservation(HealthObservation<QString> bloodPressure);
+    Q_INVOKABLE void addBloodPressureObservation(HealthObservation<QString>* bloodPressure);
 
-    HealthAttribute<float> getHeights() const;
+    Q_INVOKABLE void clearBloodPressureObservations();
 
-    HealthAttribute<float> getWeights() const;
+    Q_INVOKABLE QString getBloodPressureObservation(int pos);
 
-    HealthAttribute<float> getBmis() const;
+    Q_INVOKABLE void removeBloodPressureObservation(int pos);
 
-    HealthAttribute<QString> getVisions() const;
+    HealthAttribute<float>* getHeights() const;
+
+    Q_INVOKABLE void addHeightObservation(HealthObservation<float>* height);
+
+    Q_INVOKABLE void clearHeightObservations();
+
+    Q_INVOKABLE float getHeightObservation(int pos);
+
+    Q_INVOKABLE void removeHeightObservation(int pos);
+
+    HealthAttribute<float>* getWeights() const;
+
+    Q_INVOKABLE void addWeightObservation(HealthObservation<float>* weight);
+
+    Q_INVOKABLE void clearWeightObservations();
+
+    Q_INVOKABLE float getWeightObservation(int pos);
+
+    Q_INVOKABLE void removeWeightObservation(int pos);
+
+    HealthAttribute<float>* getBmis() const;
+
+    Q_INVOKABLE void addBmiObservation(HealthObservation<float>* bmi);
+
+    Q_INVOKABLE void clearBmiObservations();
+
+    Q_INVOKABLE float getBmiObservation(int pos);
+
+    Q_INVOKABLE void removeBmiObservation(int pos);
+
+    HealthAttribute<QString>* getVisions() const;
+
+    Q_INVOKABLE void addVisionObservation(HealthObservation<QString>* vision);
+
+    Q_INVOKABLE void clearVisionObservations();
+
+    Q_INVOKABLE QString getVisionObservation(int pos);
+
+    Q_INVOKABLE void removeVisionObservation(int pos);
 
     SymptomList* getSymptoms() const;
 
@@ -149,25 +198,25 @@ signals:
     void idChanged();
 
 public slots:
-    void setFirstName(QString firstName);
+    void setFirstName(const QString &firstName);
 
-    void setLastName(QString lastName);
+    void setLastName(const QString &lastName);
 
-    void setVision(QString vision);
+    void setVision(const QString &vision);
 
-    void setBirthDate(QString birthdate);
+    void setBirthDate(const QString &birthdate);
 
-    void setAge(int age);
+    void setAge(const int &age);
 
-    void setCurrentAddress(QString currentAddress);
+    void setCurrentAddress(const QString &currentAddress);
 
-    void setHomePhone(QString homePhone);
+    void setHomePhone(const QString &homePhone);
 
-    void setWorkPhone(QString workPhone);
+    void setWorkPhone(const QString &workPhone);
 
-    void setCellPhone(QString cellPhone);
+    void setCellPhone(const QString &cellPhone);
 
-    void setId(int id);
+    void setId(const int &id);
 
     void setInsurances(InsuranceList* insurance);
 
@@ -194,15 +243,15 @@ private:
 
     QString m_cellPhone;
 
-    HealthAttribute<QString> m_bloodPressures;
+    HealthAttribute<QString>* m_bloodPressures;
 
-    HealthAttribute<float> m_heights;
+    HealthAttribute<float>* m_heights;
 
-    HealthAttribute<float> m_weights;
+    HealthAttribute<float>* m_weights;
 
-    HealthAttribute<float> m_bmis;
+    HealthAttribute<float>* m_bmis;
 
-    HealthAttribute<QString> m_visions;
+    HealthAttribute<QString>* m_visions;
 
     HealthCareProviderList* m_healthCareProviders;
 
@@ -223,6 +272,16 @@ private:
     SurgeryList* m_surgeries;
 
     EmergencyContactList* m_emergencyContacts;
+
+    void loadBloodPressures();
+
+    void loadHeights();
+
+    void loadWeights();
+
+    void loadBMIs();
+
+    void loadVisions();
 };
 
 #endif // PATIENT_H

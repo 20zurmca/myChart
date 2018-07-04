@@ -5,6 +5,12 @@ Allergy::Allergy(QObject *parent) : QObject(parent), m_type("-"), m_isSeasonal(f
 
 }
 
+Allergy::Allergy(const QString &type, const bool &isSeasonal, const bool &isLifeThreatening, QObject *parent) : QObject(parent), m_type(type), m_isSeasonal(isSeasonal), m_isLifeThreatening(isLifeThreatening)
+{
+
+}
+
+
 Allergy::~Allergy()
 {
 
@@ -25,7 +31,7 @@ bool Allergy::getIsSeasonal() const
     return m_isSeasonal;
 }
 
-void Allergy::setIsLifeThreatening(bool isLifeThreatening)
+void Allergy::setIsLifeThreatening(const bool &isLifeThreatening)
 {
     if(isLifeThreatening != m_isLifeThreatening)
     {
@@ -35,7 +41,7 @@ void Allergy::setIsLifeThreatening(bool isLifeThreatening)
 
 }
 
-void Allergy::setIsSeasonal(bool isSeasonal)
+void Allergy::setIsSeasonal(const bool &isSeasonal)
 {
     if(isSeasonal != m_isSeasonal)
     {
@@ -45,7 +51,7 @@ void Allergy::setIsSeasonal(bool isSeasonal)
 
 }
 
-void Allergy::setType(QString newType)
+void Allergy::setType(const QString &newType)
 {
     if(newType != m_type)
     {

@@ -15,6 +15,10 @@ public:
     }
      ~HealthAttribute()
     {
+        for(auto i = observations.begin(), i != observations.end(), i++)
+        {
+            delete *i;
+        }
 
     }
 
@@ -32,12 +36,12 @@ public:
         observations.clear();
     }
 
-    Q_INVOKABLE HealthObservation<T> getObservation(int pos)
+    Q_INVOKABLE T getObservation(int pos)
     {
         if(pos < observations.size()) {
-            return observations.at(pos);
+            return observations.at(pos)->getValue();
         } else {
-            qDebug() << "Position out of bounds in call to HealthAttribute::getObservation(pos).\n";
+            qDebug() << "ERROR: Position out of bounds in call to HealthAttribute::getObservation(pos).\n";
         }
     }
 
@@ -52,7 +56,7 @@ public:
 private:
     QString name;
 
-    QVector<HealthObservation<T>> observations;
+    QVector<HealthObservation<T>*> observations;
 
 };
 

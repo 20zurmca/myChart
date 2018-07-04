@@ -9,7 +9,7 @@ class Medication : public QObject
 
     Q_PROPERTY(QString name READ getName WRITE setName NOTIFY nameChanged)
 
-    Q_PROPERTY(QString frequencyToRemind READ getFrequencyToRemind WRITE setFrequencyToRemind NOTIFY frequencyToRemindChanged)
+    Q_PROPERTY(int frequencyToRemind READ getFrequencyToRemind WRITE setFrequencyToRemind NOTIFY frequencyToRemindChanged)
 
     Q_PROPERTY(bool isPrescription READ getIsPrescription WRITE setIsPrescription NOTIFY isPrescriptionChanged)
 
@@ -24,11 +24,20 @@ class Medication : public QObject
 public:
     explicit Medication(QObject *parent = nullptr);
 
+    explicit Medication(const QString &name,
+                        const int &frequencyToRemind,
+                        const bool &isPrescription,
+                        const QString &dosage,
+                        const QString &dateStarted,
+                        const QString &dateEnded,
+                        SideEffect *sideEffect,
+                        QObject *parent);
+
     virtual ~Medication();
     
     QString getName() const;
 
-    QString getFrequencyToRemind() const;
+    int getFrequencyToRemind() const;
 
     bool getIsPrescription() const;
 
@@ -56,24 +65,24 @@ signals:
     void dateEndedChanged();
 
 public slots:
-    void setName(QString name);
+    void setName(const QString &name);
 
-    void setFrequencyToRemind(QString frequencyToRemind);
+    void setFrequencyToRemind(const int &frequencyToRemind);
 
-    void setIsPrescription(bool isPrescription);
+    void setIsPrescription(const bool &isPrescription);
 
-    void setDosage(QString dosage);
+    void setDosage(const QString &dosage);
 
-    void setDateStarted(QString dateStarted);
+    void setDateStarted(const QString &dateStarted);
 
-    void setDateEnded(QString dateEnded);
+    void setDateEnded(const QString &dateEnded);
 
-    void setSideEffect(SideEffect* sideEffect);
+    void setSideEffect(SideEffect *sideEffect);
     
 private:
     QString m_name;
 
-    QString m_frequencyToRemind;
+    int m_frequencyToRemind;
 
     bool m_isPrescription;
 

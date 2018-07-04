@@ -5,6 +5,20 @@ Patient::Patient(QObject *parent) : QObject(parent), m_bloodPressures("Blood Pre
 
 }
 
+Patient::Patient(const QString &firstName,
+                 const QString &lastName,
+                 const QString birthDate,
+                 const int &age,
+                 const QString &currentAddress,
+                 const QString &homePhone,
+                 const QString &workPhone,
+                 const QString &cellPhone,
+                 const int &id,
+                 QObject *parent)
+{
+
+}
+
 Patient::~Patient()
 {
 

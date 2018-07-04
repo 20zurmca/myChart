@@ -15,6 +15,8 @@ class Diagnosis : public QObject
 public:
     explicit Diagnosis(QObject *parent = nullptr);
 
+    explicit Diagnosis(const QString &diagnosis, const QString &treatmentPlan, QObject *parent);
+
     virtual ~Diagnosis();
     
     QString getDiagnosis() const;
@@ -27,9 +29,9 @@ signals:
     void treatmentPlanChanged();
 
 public slots:
-    void setDiagnosis(QString diagnosis);
+    void setDiagnosis(const QString &diagnosis);
 
-    void setTreatmentPlan(QString treatmentPlan);
+    void setTreatmentPlan(const QString &treatmentPlan);
 
 private:
     QString m_diagnosis;
