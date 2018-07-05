@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<Insurance*> m_insuranceList;
+
+     void loadList();
 };
 
 #endif // INSURANCELIST_H

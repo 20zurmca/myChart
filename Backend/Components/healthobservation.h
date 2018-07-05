@@ -14,7 +14,7 @@ public:
     }
      ~HealthObservation()
     {
-
+        delete value;
     }
 
     Q_INVOKABLE QString getDateObserved() const
@@ -22,7 +22,7 @@ public:
         return dateObserved.currentDate().toString("M/dd/yyyy");
     }
 
-    Q_INVOKABLE T getValue() const
+    Q_INVOKABLE T* getValue() const
     {
         return value;
     }
@@ -30,7 +30,7 @@ public:
 private:
     QDate dateObserved;
 
-    T value;
+    T* value;
 };
 
 #endif // HEALTHOBSERVATION_H

@@ -32,7 +32,9 @@ class Patient : public QObject
 
     Q_PROPERTY(QString birthDate READ getBirthDate WRITE setBirthDate NOTIFY birthDateChanged)
 
-    Q_PROPERTY(int age READ getAge WRITE setAge)
+    Q_PROPERTY(QString bloodType READ getBloodtype WRITE setBloodType NOTIFY bloodTypeChanged)
+
+    Q_PROPERTY(int age READ getAge WRITE setAge NOTIFY ageChanged)
 
     Q_PROPERTY(QString currentAddress READ getCurrentAddress WRITE setCurrentAddress NOTIFY currentAddressChanged)
 
@@ -79,7 +81,8 @@ public:
 
     explicit Patient(const QString &firstName,
                      const QString &lastName,
-                     const QString birthDate,
+                     const QString &birthDate,
+                     const QString &bloodType,
                      const int &age,
                      const QString &currentAddress,
                      const QString &homePhone,
@@ -108,13 +111,13 @@ public:
 
     int getId() const;
 
-    HealthAttribute<QString> getBloodPressures() const;
+    HealthAttribute<QString>* getBloodPressures() const;
 
     Q_INVOKABLE void addBloodPressureObservation(HealthObservation<QString>* bloodPressure);
 
     Q_INVOKABLE void clearBloodPressureObservations();
 
-    Q_INVOKABLE QString getBloodPressureObservation(int pos);
+    Q_INVOKABLE QString *getBloodPressureObservation(int pos);
 
     Q_INVOKABLE void removeBloodPressureObservation(int pos);
 
@@ -124,7 +127,7 @@ public:
 
     Q_INVOKABLE void clearHeightObservations();
 
-    Q_INVOKABLE float getHeightObservation(int pos);
+    Q_INVOKABLE float *getHeightObservation(int pos);
 
     Q_INVOKABLE void removeHeightObservation(int pos);
 
@@ -134,7 +137,7 @@ public:
 
     Q_INVOKABLE void clearWeightObservations();
 
-    Q_INVOKABLE float getWeightObservation(int pos);
+    Q_INVOKABLE float* getWeightObservation(int pos);
 
     Q_INVOKABLE void removeWeightObservation(int pos);
 
@@ -144,7 +147,7 @@ public:
 
     Q_INVOKABLE void clearBmiObservations();
 
-    Q_INVOKABLE float getBmiObservation(int pos);
+    Q_INVOKABLE float* getBmiObservation(int pos);
 
     Q_INVOKABLE void removeBmiObservation(int pos);
 
@@ -154,7 +157,7 @@ public:
 
     Q_INVOKABLE void clearVisionObservations();
 
-    Q_INVOKABLE QString getVisionObservation(int pos);
+    Q_INVOKABLE QString* getVisionObservation(int pos);
 
     Q_INVOKABLE void removeVisionObservation(int pos);
 
@@ -178,7 +181,7 @@ public:
 
     HealthCareProviderList* getHealthCareProviders() const;
 
-
+    QString getBloodtype() const;
 
 signals:
     void firstNameChanged();
@@ -197,12 +200,14 @@ signals:
 
     void idChanged();
 
+    void bloodTypeChanged();
+
+    void ageChanged();
+
 public slots:
     void setFirstName(const QString &firstName);
 
     void setLastName(const QString &lastName);
-
-    void setVision(const QString &vision);
 
     void setBirthDate(const QString &birthdate);
 
@@ -218,30 +223,32 @@ public slots:
 
     void setId(const int &id);
 
-    void setInsurances(InsuranceList* insurance);
+    void setInsurances(InsuranceList* insurances);
 
     void setEmergencyContacts(EmergencyContactList* emergencyContacts);
+
+    void setBloodType(const QString &bloodType);
 
 private:
     QString m_firstName;
 
     QString m_lastName;
 
-    QString m_bloodType;
-
     QString m_birthDate;
+
+    QString m_bloodType;
 
     int m_age;
 
-    int m_id;
-
-    QString m_currentResidence;
+    QString m_currentAddress;
 
     QString m_homePhone;
 
     QString m_workPhone;
 
     QString m_cellPhone;
+
+    int m_id;
 
     HealthAttribute<QString>* m_bloodPressures;
 

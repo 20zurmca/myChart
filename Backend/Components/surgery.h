@@ -55,19 +55,19 @@ signals:
     void procedureDateChanged();
 
 public slots:
-    void setId(int id);
+    void setId(const int &id);
 
-    void setPreOpInstructions(QString preOpInstructions);
+    void setPreOpInstructions(const QString &preOpInstructions);
 
-    void setPostOpInstructions(QString postOpInstructions);
+    void setPostOpInstructions(const QString &postOpInstructions);
 
-    void setSurgeon(QString surgeon);
+    void setSurgeon(const QString &surgeon);
 
-    void setRecoveryTime(QString recoveryTime);
+    void setRecoveryTime(const QString &recoveryTime);
 
-    void setRecoveryNotes(QString recoveryNotes);
+    void setRecoveryNotes(const QString &recoveryNotes);
 
-    void setProcedureDate(QString procedureDate);
+    void setProcedureDate(const QString &procedureDate);
 
 private:
     int m_id;

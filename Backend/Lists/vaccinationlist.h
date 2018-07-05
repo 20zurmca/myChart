@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<Vaccine*> m_vaccinationList;
+
+     void loadList();
 };
 
 #endif // VACCINATIONLIST_H

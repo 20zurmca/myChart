@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<Allergy*> m_allergyList;
+
+     void loadList();
 };
 
 #endif // ALLERGYLIST_H

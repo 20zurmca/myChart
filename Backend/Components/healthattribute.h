@@ -15,18 +15,24 @@ public:
     }
      ~HealthAttribute()
     {
-        for(auto i = observations.begin(), i != observations.end(), i++)
+        for(auto i = observations.begin(); i != observations.end(); i++)
         {
             delete *i;
         }
 
     }
 
-    Q_INVOKABLE QString getName() const;
+    Q_INVOKABLE QString getName() const
+    {
+        return name;
+    }
 
-    Q_INVOKABLE QVector<HealthObservation<T>> getObservations() const;
+    Q_INVOKABLE QVector<HealthObservation<T>* > getObservations() const
+    {
+        return observations;
+    }
 
-    Q_INVOKABLE void addObservation(HealthObservation<T> obs)
+    Q_INVOKABLE void addObservation(HealthObservation<T>* obs)
     {
         observations.push_back(obs);
     }
@@ -36,12 +42,13 @@ public:
         observations.clear();
     }
 
-    Q_INVOKABLE T getObservation(int pos)
+    Q_INVOKABLE T* getObservation(int pos)
     {
         if(pos < observations.size()) {
             return observations.at(pos)->getValue();
         } else {
             qDebug() << "ERROR: Position out of bounds in call to HealthAttribute::getObservation(pos).\n";
+            return nullptr;
         }
     }
 
@@ -50,6 +57,8 @@ public:
         if (pos < observations.size() && pos > 0)
         {
             observations.remove(pos);
+        } else {
+            qDebug() << "ERROR: Position out of bounds in call to HealthAttribute::removeObservation(pos).\n";
         }
     }
 

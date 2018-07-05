@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<EmergencyContact*> m_emergencyContactList;
+
+     void loadList();
 };
 
 #endif // EMERGENCYCONTACTLIST_H

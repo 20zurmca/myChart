@@ -15,6 +15,8 @@ class SideEffect : public QObject
 public:
     explicit SideEffect(QObject *parent = nullptr);
 
+    explicit SideEffect(const int &id, const QString &description, QObject *parent = nullptr);
+
     virtual ~SideEffect();
     
     int getId() const;
@@ -27,9 +29,9 @@ signals:
     void descriptionChanged();
    
 public slots:
-    void setId(int id);
+    void setId(const int &id);
 
-    void setDescription(QString description);
+    void setDescription(const QString &description);
     
 private:
     int m_id;

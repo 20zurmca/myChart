@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<Diagnosis*> m_diagnosesList;
+
+     void loadList();
 };
 
 #endif // DIAGNOSESLIST_H

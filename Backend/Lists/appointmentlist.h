@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<AppointmentList*> m_appointmentList;
+
+    void loadList();
 };
 
 #endif // APPOINTMENTLIST_H

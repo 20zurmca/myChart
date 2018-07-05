@@ -14,6 +14,8 @@ class Symptom : public QObject
 public:
     explicit Symptom(QObject *parent = nullptr);
 
+    explicit Symptom(const QString &name, const QString &dateRecorded, QObject *parent= nullptr);
+
     virtual ~Symptom();
 
     QString getName() const;
@@ -24,7 +26,7 @@ signals:
     void nameChanged();
 
 public slots:
-    void setName(QString name);
+    void setName(const QString &name);
 
 private:
     QString m_name;

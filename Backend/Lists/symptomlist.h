@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<Symptom*> m_symptomList;
+
+     void loadList();
 };
 
 #endif // SYMPTOMLIST_H

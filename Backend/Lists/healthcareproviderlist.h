@@ -35,6 +35,8 @@ public slots:
 
 private:
     QVector<HealthCareProvider*> m_healthCareProviderList;
+
+     void loadList();
 };
 
 #endif // HEALTHCAREPROVIDERLIST_H
