@@ -306,6 +306,11 @@ HealthCareProviderList *Patient::getHealthCareProviders() const
     return m_healthCareProviders;
 }
 
+QString Patient::getBloodtype() const
+{
+    return m_bloodType;
+}
+
 void Patient::setFirstName(const QString &firstName)
 {
     if(firstName != m_firstName)
