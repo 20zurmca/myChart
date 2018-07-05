@@ -52,7 +52,7 @@ void Appointment::setDate(const QString &date)
     if(date != m_date)
     {
         m_date = date;
-        emit dateChanged();
+        emit dateChanged(date);
     }
 }
 
@@ -61,7 +61,7 @@ void Appointment::setId(const int &id)
     if(id != m_id)
     {
         m_id = id;
-        emit idChanged();
+        emit idChanged(id);
     }
 }
 
@@ -70,7 +70,7 @@ void Appointment::setLocation(const QString &location)
     if(location != m_location)
     {
         m_location = location;
-        emit locationChanged();
+        emit locationChanged(location);
     }
 
 }
@@ -80,7 +80,7 @@ void Appointment::setReason(const QString &reason)
     if (reason != m_reason)
     {
         m_reason = reason;
-        emit reasonChanged();
+        emit reasonChanged(reason);
     }
 }
 
@@ -89,7 +89,7 @@ void Appointment::setTime(const QString &time)
     if(time != m_time)
     {
         m_time = time;
-        emit timeChanged();
+        emit timeChanged(time);
     }
 }
 

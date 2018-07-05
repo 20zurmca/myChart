@@ -41,15 +41,17 @@ public:
     QString getReason() const;
 
 signals:
-    void idChanged();
 
-    void dateChanged();
 
-    void timeChanged();
+    void idChanged(int id);
 
-    void locationChanged();
+    void dateChanged(QString date);
 
-    void reasonChanged();
+    void timeChanged(QString time);
+
+    void locationChanged(QString location);
+
+    void reasonChanged(QString reason);
 
 public slots:
     void setId(const int &id);

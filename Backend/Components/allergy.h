@@ -31,11 +31,13 @@ public:
    QString isLifeThreateningAsQstr() const;
     
 signals:
-    void typeChanged();
 
-    void isSeasonalChanged();
 
-    void isLifeThreateningChanged();
+   void typeChanged(QString type);
+
+   void isSeasonalChanged(bool isSeasonal);
+
+   void isLifeThreateningChanged(bool isLifeThreatening);
 
 public slots:
     void setType(const QString &newType);

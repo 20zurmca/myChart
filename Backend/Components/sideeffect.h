@@ -24,10 +24,12 @@ public:
     QString getDescription() const;
 
 signals:
-    void idChanged();
 
-    void descriptionChanged();
-   
+
+    void descriptionChanged(QString description);
+
+    void idChanged(int id);
+
 public slots:
     void setId(const int &id);
 

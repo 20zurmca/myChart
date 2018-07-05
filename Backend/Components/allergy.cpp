@@ -36,7 +36,7 @@ void Allergy::setIsLifeThreatening(const bool &isLifeThreatening)
     if(isLifeThreatening != m_isLifeThreatening)
     {
         m_isLifeThreatening = isLifeThreatening;
-        emit isLifeThreateningChanged();
+        emit isLifeThreateningChanged(isLifeThreatening);
     }
 
 }
@@ -46,7 +46,7 @@ void Allergy::setIsSeasonal(const bool &isSeasonal)
     if(isSeasonal != m_isSeasonal)
     {
         m_isSeasonal = isSeasonal;
-        emit isSeasonalChanged();
+        emit isSeasonalChangedisSeasonal;
     }
 
 }
@@ -56,7 +56,7 @@ void Allergy::setType(const QString &newType)
     if(newType != m_type)
     {
         m_type = newType;
-        emit typeChanged();
+        emit typeChanged(newType);
 
     }
 }

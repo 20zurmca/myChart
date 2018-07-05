@@ -17,7 +17,9 @@ public:
     SideEffect* getSideEffect() const;
 
 signals:
-    void sideEffectChanged();
+
+
+    void sideEffectChanged(SideEffect* sideEffect);
 
 public slots:
     void setSideEffect(SideEffect* sideEffect);

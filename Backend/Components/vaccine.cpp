@@ -16,6 +16,6 @@ void Vaccine::setSideEffect(SideEffect *sideEffect)
     if(sideEffect != m_sideEffect)
     {
         m_sideEffect = sideEffect;
-        emit sideEffectChanged();
+        emit sideEffectChanged(sideEffect);
     }
 }
