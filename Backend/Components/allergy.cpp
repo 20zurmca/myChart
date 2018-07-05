@@ -46,7 +46,7 @@ void Allergy::setIsSeasonal(const bool &isSeasonal)
     if(isSeasonal != m_isSeasonal)
     {
         m_isSeasonal = isSeasonal;
-        emit isSeasonalChangedisSeasonal;
+        emit isSeasonalChanged(isSeasonal);
     }
 
 }
