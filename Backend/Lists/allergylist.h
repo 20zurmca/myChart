@@ -11,7 +11,7 @@ class AllergyList : public QObject
 public:
     explicit AllergyList(QObject *parent = nullptr);
 
-   Q_INVOKABLE QVector<AllergyList> allergies() const;
+   Q_INVOKABLE QVector<Allergy*> allergies() const;
 
    Q_INVOKABLE bool setAllergyAt(int index, Allergy* allergy);
 
