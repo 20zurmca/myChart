@@ -70,11 +70,11 @@ class Patient : public QObject
 
     Q_PROPERTY(VaccinationList* vaccines READ getVaccines)
 
-    Q_PROPERTY(InsuranceList* insurances READ getInsurances WRITE setInsurances)
+    Q_PROPERTY(InsuranceList* insurances READ getInsurances WRITE setInsurances NOTIFY insurancesChanged)
 
     Q_PROPERTY(SurgeryList* surgeries READ getSurgeries)
 
-    Q_PROPERTY(EmergencyContactList* emergencyContacts READ getEmergencyContacts WRITE setEmergencyContacts)
+    Q_PROPERTY(EmergencyContactList* emergencyContacts READ getEmergencyContacts WRITE setEmergencyContacts NOTIFY emergencyContactsChanged)
 
 public:
     explicit Patient(QObject *parent = nullptr);
@@ -203,6 +203,10 @@ signals:
     void bloodTypeChanged();
 
     void ageChanged();
+
+    void insurancesChanged();
+
+    void emergencyContactsChanged();
 
 public slots:
     void setFirstName(const QString &firstName);

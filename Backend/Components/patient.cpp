@@ -207,163 +207,216 @@ void Patient::removeWeightObservation(int pos)
 
 HealthAttribute<float> *Patient::getBmis() const
 {
-
+    return m_bmis;
 }
 
 void Patient::addBmiObservation(HealthObservation<float> *bmi)
 {
-
+    return m_bmis->addObservation(bmi);
 }
 
 void Patient::clearBmiObservations()
 {
-
+    return m_bmis->clearObservations();
 }
 
 float* Patient::getBmiObservation(int pos)
 {
-
+    return m_bmis->getObservation(pos);
 }
 
 void Patient::removeBmiObservation(int pos)
 {
-
+    m_bmis->removeObservation(pos);
 }
 
 HealthAttribute<QString> *Patient::getVisions() const
 {
-
+    return m_visions;
 }
 
 void Patient::addVisionObservation(HealthObservation<QString> *vision)
 {
-
+    m_visions->addObservation(vision);
 }
 
 void Patient::clearVisionObservations()
 {
-
+    m_visions->clearObservations();
 }
 
 QString* Patient::getVisionObservation(int pos)
 {
-
+    return m_visions->getObservation(pos);
 }
 
 void Patient::removeVisionObservation(int pos)
 {
-
+    m_visions->removeObservation(pos);
 }
 
 
 SymptomList *Patient::getSymptoms() const
 {
-
+    return m_symptoms;
 }
 
 DiagnosesList *Patient::getDiagnoses() const
 {
-
+    return m_diagnoses;
 }
 
 AllergyList *Patient::getAllergies() const
 {
-
+    return m_allergies;
 }
 
 AppointmentList *Patient::getAppointments() const
 {
-
+    return m_appointments;
 }
 
 MedicationList *Patient::getMedications() const
 {
-
+    return m_medications;
 }
 
 VaccinationList *Patient::getVaccines() const
 {
-
+    return m_vaccines;
 }
 
 InsuranceList *Patient::getInsurances() const
 {
-
+    return m_insurances;
 }
 
 SurgeryList *Patient::getSurgeries() const
 {
-
+    return m_surgeries;
 }
 
 EmergencyContactList *Patient::getEmergencyContacts() const
 {
-
+    return m_emergencyContacts;
 }
 
 HealthCareProviderList *Patient::getHealthCareProviders() const
 {
-
+    return m_healthCareProviders;
 }
 
 void Patient::setFirstName(const QString &firstName)
 {
-
+    if(firstName != m_firstName)
+    {
+        m_firstName = firstName;
+        emit firstNameChanged();
+    }
 }
 
 void Patient::setLastName(const QString &lastName)
 {
-
+    if(lastName != m_lastName)
+    {
+        m_lastName = lastName;
+        emit lastNameChanged();
+    }
 }
 
-void Patient::setVision(const QString &vision)
-{
-
-}
 
 void Patient::setBirthDate(const QString &birthdate)
 {
-
+    if(birthdate != m_birthDate)
+    {
+        m_birthDate = birthdate;
+        emit birthDateChanged();
+    }
 }
 
 void Patient::setAge(const int &age)
 {
-
+    if(age != m_age)
+    {
+        m_age = age;
+        emit ageChanged();
+    }
 }
 
 void Patient::setCurrentAddress(const QString &currentAddress)
 {
-
+    if(currentAddress != m_currentAddress)
+    {
+        m_currentAddress = currentAddress;
+        emit currentAddressChanged();
+    }
 }
 
 void Patient::setHomePhone(const QString &homePhone)
 {
-
+    if(homePhone != m_homePhone)
+    {
+        m_homePhone = homePhone;
+        emit homePhoneChanged();
+    }
 }
 
 void Patient::setWorkPhone(const QString &workPhone)
 {
+    if(workPhone != m_workPhone)
+    {
+        m_workPhone = workPhone;
+        emit workPhoneChanged();
+    }
 
 }
 
 void Patient::setCellPhone(const QString &cellPhone)
 {
+    if(cellPhone != m_cellPhone)
+    {
+        m_cellPhone = cellPhone;
+        emit cellPhoneChanged();
+    }
 
 }
 
 void Patient::setId(const int &id)
 {
+    if(id != m_id)
+    {
+        m_id = id;
+        emit idChanged();
+    }
 
 }
 
-void Patient::setInsurances(InsuranceList *insurance)
+void Patient::setInsurances(InsuranceList *insurances)
 {
+    if(insurances != m_insurances)
+    {
+        m_insurances = insurances;
+        emit insurancesChanged();
+    }
 
 }
 
 void Patient::setEmergencyContacts(EmergencyContactList *emergencyContacts)
 {
+    if(emergencyContacts != m_emergencyContacts)
+    {
+        m_emergencyContacts = emergencyContacts;
+        emit emergencyContactsChanged();
+    }
+}
 
+void Patient::setBloodType(const QString &bloodType)
+{
+    if(bloodType != m_bloodType)
+    {
+        m_bloodType = bloodType;
+        emit bloodTypeChanged();
+    }
 }
 
 void Patient::loadBloodPressures()
