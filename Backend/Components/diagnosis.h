@@ -24,9 +24,11 @@ public:
     QString getTreatmentPlan() const;
 
 signals:
-    void diagnosisChanged();
 
-    void treatmentPlanChanged();
+
+    void diagnosisChanged(QString diagnosis);
+
+    void treatmentPlanChanged(QString treatmentPlan);
 
 public slots:
     void setDiagnosis(const QString &diagnosis);

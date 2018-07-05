@@ -30,7 +30,7 @@ void Diagnosis::setDiagnosis(const QString &diagnosis)
     if(diagnosis != m_diagnosis)
     {
         m_diagnosis = diagnosis;
-        emit diagnosisChanged();
+        emit diagnosisChanged(diagnosis);
     }
 }
 
@@ -39,7 +39,7 @@ void Diagnosis::setTreatmentPlan(const QString &treatmentPlan)
     if(treatmentPlan != m_treatmentPlan)
     {
         m_treatmentPlan = treatmentPlan;
-        emit treatmentPlanChanged();
+        emit treatmentPlanChanged(treatmentPlan);
     }
 
 }
