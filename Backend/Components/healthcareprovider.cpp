@@ -45,7 +45,7 @@ void HealthCareProvider::setName(const QString &name)
     if(name != m_name)
     {
         m_name = name;
-        emit nameChanged();
+        emit nameChanged(name);
     }
 }
 
@@ -54,7 +54,7 @@ void HealthCareProvider::setType(const QString &type)
     if(type != m_type)
     {
         m_type = type;
-        emit typeChanged();
+        emit typeChanged(type);
     }
 }
 
@@ -63,7 +63,7 @@ void HealthCareProvider::setOfficeAddress(const QString &officeAddress)
     if(officeAddress != m_officeAddress)
     {
         m_officeAddress = officeAddress;
-        emit officeAddressChanged();
+        emit officeAddressChanged(officeAddress);
     }
 
 }
@@ -73,6 +73,6 @@ void HealthCareProvider::setOfficePhone(const QString &officePhone)
     if(officePhone != m_officePhone)
     {
         m_officePhone = officePhone;
-        emit officePhoneChanged();
+        emit officePhoneChanged(officePhone);
     }
 }

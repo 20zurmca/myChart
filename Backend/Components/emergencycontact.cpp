@@ -60,7 +60,7 @@ void EmergencyContact::setName(const QString &name)
     if(name != m_name)
     {
         m_name = name;
-        emit nameChanged();
+        emit nameChanged(name);
     }
 }
 
@@ -69,7 +69,7 @@ void EmergencyContact::setHomePhone(const QString &homePhone)
     if(homePhone != m_homePhone)
     {
         m_homePhone = homePhone;
-        emit homePhoneChanged();
+        emit homePhoneChanged(homePhone);
     }
 
 }
@@ -79,7 +79,7 @@ void EmergencyContact::setWorkPhone(const QString &workPhone)
     if(workPhone != m_workPhone)
     {
         m_workPhone = workPhone;
-        emit workPhoneChanged();
+        emit workPhoneChanged(workPhone);
     }
 
 }
@@ -89,7 +89,7 @@ void EmergencyContact::setCellPhone(const QString &cellPhone)
     if(cellPhone != m_cellPhone)
     {
         m_cellPhone = cellPhone;
-        emit cellPhoneChanged();
+        emit cellPhoneChanged(cellPhone);
     }
 
 }
@@ -99,7 +99,7 @@ void EmergencyContact::setRelationshipToPatient(const QString &relationshipToPat
     if (relationshipToPatient != m_relationshipToPatient)
     {
         m_relationshipToPatient = relationshipToPatient;
-        emit relationshipToPatientChanged();
+        emit relationshipToPatientChanged(relationshipToPatient);
     }
 
 }
@@ -109,7 +109,7 @@ void EmergencyContact::setId(const int &id)
     if (id != m_id)
     {
         m_id = id;
-        emit idChanged();
+        emit idChanged(id);
     }
 
 }

@@ -66,7 +66,7 @@ void Medication::setName(const QString &name)
     if(name != m_name)
     {
         m_name = name;
-        emit nameChanged();
+        emit nameChanged(name);
     }
 }
 
@@ -75,7 +75,7 @@ void Medication::setFrequencyToRemind(const int &frequencyToRemind)
     if(frequencyToRemind != m_frequencyToRemind)
     {
         m_frequencyToRemind = frequencyToRemind;
-        emit frequencyToRemindChanged();
+        emit frequencyToRemindChanged(frequencyToRemind);
     }
 }
 
@@ -84,7 +84,7 @@ void Medication::setIsPrescription(const bool &isPrescription)
     if(isPrescription != m_isPrescription)
     {
         m_isPrescription = isPrescription;
-        emit isPrescriptionChanged();
+        emit isPrescriptionChanged(isPrescription);
     }
 }
 
@@ -93,7 +93,7 @@ void Medication::setDosage(const QString &dosage)
     if(dosage != m_dosage)
     {
         m_dosage = dosage;
-        emit dosageChanged();
+        emit dosageChanged(dosage);
     }
 }
 
@@ -102,7 +102,7 @@ void Medication::setDateStarted(const QString &dateStarted)
     if(dateStarted != m_dateStarted)
     {
         m_dateStarted = dateStarted;
-        emit dateStartedChanged();
+        emit dateStartedChanged(dateStarted);
     }
 
 }
@@ -112,7 +112,7 @@ void Medication::setDateEnded(const QString &dateEnded)
     if(dateEnded != m_dateEnded)
     {
         m_dateEnded = dateEnded;
-        emit dateEndedChanged();
+        emit dateEndedChanged(dateEnded);
     }
 
 }
@@ -122,6 +122,6 @@ void Medication::setSideEffect(SideEffect *sideEffect)
     if(sideEffect != m_sideEffect)
     {
         m_sideEffect = sideEffect;
-        emit sideEffectChanged();
+        emit sideEffectChanged(sideEffect);
     }
 }

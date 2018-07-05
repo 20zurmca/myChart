@@ -59,7 +59,7 @@ void Insurance::setMemberId(const QString &memberId)
     if(memberId != m_memberId)
     {
         m_memberId = memberId;
-        emit memberIdChanged();
+        emit memberIdChanged(memberId);
     }
 }
 
@@ -68,7 +68,7 @@ void Insurance::setType(const QString &type)
     if(type != m_type)
     {
         m_type = type;
-        emit typeChanged();
+        emit typeChanged(type);
     }
 }
 
@@ -77,7 +77,7 @@ void Insurance::setCarrier(const QString &carrier)
     if(carrier != m_carrier)
     {
         m_carrier = carrier;
-        emit carrierChanged();
+        emit carrierChanged(carrier);
     }
 }
 
@@ -86,7 +86,7 @@ void Insurance::setEmployer(const QString &employer)
     if(employer != m_employer)
     {
         m_employer = employer;
-        emit employerChanged();
+        emit employerChanged(employer);
     }
 
 }
@@ -96,7 +96,7 @@ void Insurance::setGroupNumber(const QString &groupNumber)
     if(groupNumber != m_groupNumber)
     {
         m_groupNumber = groupNumber;
-        emit groupNumberChanged();
+        emit groupNumberChanged(groupNumber);
     }
 
 }
@@ -106,6 +106,6 @@ void Insurance::setSponser(const QString &sponser)
     if(sponser != m_sponser)
     {
         m_sponser = sponser;
-        emit sponserChanged();
+        emit sponserChanged(sponser);
     }
 }

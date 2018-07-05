@@ -45,17 +45,19 @@ public:
     QString getSponser() const;
 
 signals:
-    void memberIdChanged();
 
-    void typeChanged();
 
-    void carrierChanged();
+    void memberIdChanged(QString memberId);
 
-    void employerChanged();
+    void typeChanged(QString type);
 
-    void groupNumberChanged();
+    void carrierChanged(QString carrier);
 
-    void sponserChanged();
+    void employerChanged(QString employer);
+
+    void groupNumberChanged(QString groupNumber);
+
+    void sponserChanged(QString sponser);
 
 public slots:
     void setMemberId(const QString &memberId);

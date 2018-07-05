@@ -184,29 +184,31 @@ public:
     QString getBloodtype() const;
 
 signals:
-    void firstNameChanged();
 
-    void lastNameChanged();
 
-    void birthDateChanged();
+    void firstNameChanged(QString firstName);
 
-    void currentAddressChanged();
+    void lastNameChanged(QString lastName);
 
-    void homePhoneChanged();
+    void birthDateChanged(QString birthDate);
 
-    void workPhoneChanged();
+    void bloodTypeChanged(QString bloodType);
 
-    void cellPhoneChanged();
+    void ageChanged(int age);
 
-    void idChanged();
+    void currentAddressChanged(QString currentAddress);
 
-    void bloodTypeChanged();
+    void homePhoneChanged(QString homePhone);
 
-    void ageChanged();
+    void workPhoneChanged(QString workPhone);
 
-    void insurancesChanged();
+    void cellPhoneChanged(QString cellPhone);
 
-    void emergencyContactsChanged();
+    void idChanged(int id);
+
+    void insurancesChanged(InsuranceList* insurances);
+
+    void emergencyContactsChanged(EmergencyContactList* emergencyContacts);
 
 public slots:
     void setFirstName(const QString &firstName);

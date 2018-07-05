@@ -30,6 +30,6 @@ void HealthEvent::setName(const QString &name)
     if (name != m_name)
     {
         m_name = name;
-        emit nameChanged();
+        emit nameChanged(name);
     }
 }

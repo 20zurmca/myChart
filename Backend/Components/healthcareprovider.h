@@ -32,13 +32,15 @@ public:
     QString getOfficePhone() const;
 
 signals:
-    void nameChanged();
 
-    void typeChanged();
 
-    void officeAddressChanged();
+    void nameChanged(QString name);
 
-    void officePhoneChanged();
+    void typeChanged(QString type);
+
+    void officeAddressChanged(QString officeAddress);
+
+    void officePhoneChanged(QString officePhone);
 
 public slots:
     void setName(const QString &name);

@@ -46,17 +46,19 @@ public:
     
 
 signals:
-    void nameChanged();
 
-    void homePhoneChanged();
 
-    void workPhoneChanged();
+    void nameChanged(QString name);
 
-    void cellPhoneChanged();
+    void homePhoneChanged(QString homePhone);
 
-    void relationshipToPatientChanged();
+    void workPhoneChanged(QString workPhone);
 
-    void idChanged();
+    void cellPhoneChanged(QString cellPhone);
+
+    void relationshipToPatientChanged(QString relationshipToPatient);
+
+    void idChanged(int id);
 
 public slots:
     void setName(const QString &name);

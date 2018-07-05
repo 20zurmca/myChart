@@ -25,7 +25,8 @@ public:
     QString getDateRecorded() const;
 
 signals:
-    void nameChanged();
+
+    void nameChanged(QString name);
 
 public slots:
     void setName(const QString &name);

@@ -50,19 +50,21 @@ public:
     SideEffect* getSideEffect() const;
     
 signals:
-    void nameChanged();
 
-    void frequencyToRemindChanged();
 
-    void isPrescriptionChanged();
+    void nameChanged(QString name);
 
-    void dosageChanged();
+    void frequencyToRemindChanged(int frequencyToRemind);
 
-    void dateStartedChanged();
+    void isPrescriptionChanged(bool isPrescription);
 
-    void sideEffectChanged();
+    void dosageChanged(QString dosage);
 
-    void dateEndedChanged();
+    void dateStartedChanged(QString dateStarted);
+
+    void dateEndedChanged(QString dateEnded);
+
+    void sideEffectChanged(SideEffect* sideEffect);
 
 public slots:
     void setName(const QString &name);

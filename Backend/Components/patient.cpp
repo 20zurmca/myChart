@@ -316,7 +316,7 @@ void Patient::setFirstName(const QString &firstName)
     if(firstName != m_firstName)
     {
         m_firstName = firstName;
-        emit firstNameChanged();
+        emit firstNameChanged(firstName);
     }
 }
 
@@ -325,7 +325,7 @@ void Patient::setLastName(const QString &lastName)
     if(lastName != m_lastName)
     {
         m_lastName = lastName;
-        emit lastNameChanged();
+        emit lastNameChanged(lastName);
     }
 }
 
@@ -335,7 +335,7 @@ void Patient::setBirthDate(const QString &birthdate)
     if(birthdate != m_birthDate)
     {
         m_birthDate = birthdate;
-        emit birthDateChanged();
+        emit birthDateChanged(birthdate);
     }
 }
 
@@ -344,7 +344,7 @@ void Patient::setAge(const int &age)
     if(age != m_age)
     {
         m_age = age;
-        emit ageChanged();
+        emit ageChanged(age);
     }
 }
 
@@ -353,7 +353,7 @@ void Patient::setCurrentAddress(const QString &currentAddress)
     if(currentAddress != m_currentAddress)
     {
         m_currentAddress = currentAddress;
-        emit currentAddressChanged();
+        emit currentAddressChanged(currentAddress);
     }
 }
 
@@ -362,7 +362,7 @@ void Patient::setHomePhone(const QString &homePhone)
     if(homePhone != m_homePhone)
     {
         m_homePhone = homePhone;
-        emit homePhoneChanged();
+        emit homePhoneChanged(homePhone);
     }
 }
 
@@ -371,7 +371,7 @@ void Patient::setWorkPhone(const QString &workPhone)
     if(workPhone != m_workPhone)
     {
         m_workPhone = workPhone;
-        emit workPhoneChanged();
+        emit workPhoneChanged(workPhone);
     }
 
 }
@@ -381,7 +381,7 @@ void Patient::setCellPhone(const QString &cellPhone)
     if(cellPhone != m_cellPhone)
     {
         m_cellPhone = cellPhone;
-        emit cellPhoneChanged();
+        emit cellPhoneChanged(cellPhone);
     }
 
 }
@@ -391,7 +391,7 @@ void Patient::setId(const int &id)
     if(id != m_id)
     {
         m_id = id;
-        emit idChanged();
+        emit idChanged(id);
     }
 
 }
@@ -401,7 +401,7 @@ void Patient::setInsurances(InsuranceList *insurances)
     if(insurances != m_insurances)
     {
         m_insurances = insurances;
-        emit insurancesChanged();
+        emit insurancesChanged(insurances);
     }
 
 }
@@ -411,7 +411,7 @@ void Patient::setEmergencyContacts(EmergencyContactList *emergencyContacts)
     if(emergencyContacts != m_emergencyContacts)
     {
         m_emergencyContacts = emergencyContacts;
-        emit emergencyContactsChanged();
+        emit emergencyContactsChanged(emergencyContacts);
     }
 }
 
@@ -420,11 +420,12 @@ void Patient::setBloodType(const QString &bloodType)
     if(bloodType != m_bloodType)
     {
         m_bloodType = bloodType;
-        emit bloodTypeChanged();
+        emit bloodTypeChanged(bloodType);
     }
 }
 
 void Patient::loadBloodPressures()
+
 {
 
 }
