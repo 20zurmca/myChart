@@ -42,6 +42,11 @@ QString Appointment::getReason() const
     return m_reason;
 }
 
+QString Appointment::getDateMade() const
+{
+
+}
+
 QString Appointment::getTime() const
 {
     return m_time;
@@ -82,6 +87,11 @@ void Appointment::setReason(const QString &reason)
         m_reason = reason;
         emit reasonChanged(reason);
     }
+}
+
+void Appointment::setDateMade(QString dateMade)
+{
+
 }
 
 void Appointment::setTime(const QString &time)

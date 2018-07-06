@@ -5,7 +5,7 @@ Surgery::~Surgery()
 
 }
 
-int Surgery::getId() const
+int Surgery::getPatientId() const
 {
     return m_id;
 }
@@ -40,12 +40,12 @@ QString Surgery::getProcedureDate() const
     return m_procedureDate;
 }
 
-void Surgery::setId(const int &id)
+void Surgery::setPatientId(const int &patientId)
 {
-    if(id != m_id)
+    if(patientId != m_id)
     {
-        m_id = id;
-        emit idChanged();
+        m_id = patientId;
+        emit patientIdChanged();
     }
 }
 
@@ -54,7 +54,7 @@ void Surgery::setPreOpInstructions(const QString &preOpInstructions)
     if(preOpInstructions != m_preOpInstructions)
     {
         m_preOpInstructions = preOpInstructions;
-        emit preOpInstructionsChanged();
+        emit preOpInstructionsChanged(prepOpInstructions);
     }
 }
 
@@ -63,7 +63,7 @@ void Surgery::setPostOpInstructions(const QString &postOpInstructions)
     if(postOpInstructions != m_postOpInstructions)
     {
         m_postOpInstructions = postOpInstructions;
-        emit postOpInstructionsChanged();
+        emit postOpInstructionsChanged(postOpInstructions);
     }
 }
 
@@ -72,7 +72,7 @@ void Surgery::setSurgeon(const QString &surgeon)
     if(surgeon != m_surgeon)
     {
         m_surgeon = surgeon;
-        emit surgeonChanged();
+        emit surgeonChanged(surgeon);
     }
 }
 
@@ -81,7 +81,7 @@ void Surgery::setRecoveryTime(const QString &recoveryTime)
     if(recoveryTime != m_recoveryTime)
     {
         m_recoveryTime = recoveryTime;
-        emit recoveryTimeChanged();
+        emit recoveryTimeChanged(recoveryTime);
     }
 }
 
@@ -90,7 +90,7 @@ void Surgery::setRecoveryNotes(const QString &recoveryNotes)
     if(recoveryNotes != m_recoveryNotes)
     {
         m_recoveryNotes = recoveryNotes;
-        emit recoveryNotesChanged();
+        emit recoveryNotesChanged(recoveryNotes);
     }
 }
 
@@ -99,6 +99,6 @@ void Surgery::setProcedureDate(const QString &procedureDate)
     if(procedureDate != m_procedureDate)
     {
         m_procedureDate = procedureDate;
-        emit procedureDateChanged();
+        emit procedureDateChanged(procedureDate);
     }
 }

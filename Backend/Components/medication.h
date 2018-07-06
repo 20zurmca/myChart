@@ -21,6 +21,10 @@ class Medication : public QObject
 
     Q_PROPERTY(SideEffect* sideEffect READ getSideEffect WRITE setSideEffect NOTIFY sideEffectChanged)
 
+    Q_PROPERTY(QString startTime READ getStartTime WRITE setStartTime NOTIFY startTimeChanged)
+
+   // Q_PROPERTY(type TIME_LIST READ name WRITE setName NOTIFY nameChanged)
+
 public:
     explicit Medication(QObject *parent = nullptr);
 
@@ -49,6 +53,9 @@ public:
 
     SideEffect* getSideEffect() const;
     
+    QString getStartTime() const;
+
+
 signals:
 
 
@@ -66,6 +73,8 @@ signals:
 
     void sideEffectChanged(SideEffect* sideEffect);
 
+    void startTimeChanged(QString startTime);
+
 public slots:
     void setName(const QString &name);
 
@@ -81,6 +90,9 @@ public slots:
 
     void setSideEffect(SideEffect *sideEffect);
     
+    void setStartTime(const QString &startTime);
+
+
 private:
     QString m_name;
 
@@ -96,6 +108,7 @@ private:
 
     SideEffect* m_sideEffect;
 
+    QString m_startTime;
 };
 
 #endif // MEDICATION_H
